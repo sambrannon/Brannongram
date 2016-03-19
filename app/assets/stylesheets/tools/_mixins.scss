@@ -1,0 +1,124 @@
+// scss-lint:disable VendorPrefix
+// Media Queries
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+//** CLEARFIX *********************/
+@mixin clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+//** TRUNCATE *********************/
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//** FULLSCREEN *********************/
+@mixin absolute-full($size) {
+  position: absolute;
+  top: $size;
+  right: $size;
+  bottom: $size;
+  left: $size;
+}
+
+//** PURE CSS TRIANGLES *********************/
+@mixin triangle ($direction, $size, $color) {
+
+  width: 0;
+  height: 0;
+
+  @if $direction == 'right' {
+
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+
+  } @elseif $direction == 'down' {
+
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+
+  } @elseif $direction == 'left' {
+
+    border-top: $size solid transparent;
+    border-right: $size solid $color;
+    border-bottom: $size solid transparent;
+
+  } @elseif $direction == 'up' {
+
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+
+  }
+}
+
+//** CSS GRADIENT *********************/
+//Prefixes definition
+$webkit:true;
+$o:true;
+$moz:true;
+$w3:true;
+$ms:true;
+
+@mixin gradient($mode, $direction, $from, $to, $old-direction:null) {
+
+  @if $webkit == true {
+    @if($old-direction != null){
+      background-image: -webkit-gradient($mode, #{$old-direction}, from($from), to($to));
+    }
+    background-image: -webkit-#{$mode}-gradient($direction, $from, $to);
+  }
+  @if $moz == true {
+    background-image: -moz-#{$mode}-gradient($direction, $from, $to);
+  }
+  @if $o == true {
+    background-image: -o-#{$mode}-gradient($direction, $from, $to);
+  }
+  @if $ms == true {
+    background-image: -ms-#{$mode}-gradient($direction, $from, $to);
+  }
+  @if $w3 == true {
+    background-image: #{$mode}-gradient($direction, $from, $to);
+  }
+}
+
+//** KEYFRAMES *********************/
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+//** ANIMATION *********************/
+@mixin animation($name, $duration, $ease, $delay) {
+  -webkit-animation: $name $duration $ease $delay;
+  -moz-animation: $name $duration $ease $delay;
+  animation: $name $duration $ease $delay;
+}
+
+//** LIST RESET *********************/
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

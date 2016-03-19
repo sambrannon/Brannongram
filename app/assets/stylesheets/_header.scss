@@ -1,0 +1,26 @@
+.app-header {
+
+  height: 77px;
+  padding: 24px 0;
+  border-bottom: solid 1px $borders;
+  background: $white;
+
+  &__logo {
+    display: block;
+    height: 36px;
+    float: left;
+  }
+
+  &__logo-image {
+    display: block;
+    width: auto;
+    height: 100%;
+    color: $blue;
+  }
+
+  &__button {
+    display: inline-block;
+    float: right;
+  }
+
+}
