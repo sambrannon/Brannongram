@@ -7,6 +7,7 @@ gem 'paperclip', '~> 4.3'
 gem 'rails', '4.2.6'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'simple_form'
 gem "slim-rails"
 gem 'sqlite3'
 gem 'turbolinks'
