@@ -1,7 +1,11 @@
 .wrap
-  ul.posts
+  div.posts
     - @posts.each do |p|
-      li.post
+      article.post
+        .post__header
+          = image_tag 'avatar_default.jpg', class: 'post__header-avatar'
+          span.post__header-name sambrannon
+          span.post__header-time 12m
         = image_tag p.image.url(:medium), class: 'post__image'
         p.post__caption
           = p.caption

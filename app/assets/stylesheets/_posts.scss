@@ -1,0 +1,45 @@
+.posts {
+  margin-top: 60px;
+}
+
+.post {
+
+  margin-bottom: 60px;
+  border: solid 1px $borders;
+  border-radius: 3px;
+  background-color: $white;
+
+  &__header {
+    @include clearfix;
+    height: 64px;
+    padding: 14px 20px;
+  }
+
+  &__header-avatar {
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+    border: 1px solid $borders;
+    border-radius: 50%;
+    background-color: $gray;
+  }
+
+  &__header-name {
+
+  }
+
+  &__header-time {
+    float: right;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__caption {
+
+  }
+
+}
