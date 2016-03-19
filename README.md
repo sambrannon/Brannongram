@@ -7,18 +7,21 @@ It's made by following [these guides](https://www.devwalks.com/lets-build-instag
 
 The installation instructions are super verbose in hopes that I'll remember it better if I write it all down. It's all based on using [rbenv](https://github.com/rbenv/rbenv) to manage Ruby versions.
 
-1. Install Rails
+1. Install rbenv (if not already)
   ```
-  $ sudo gem install Rails
+  $ brew install rbenv
+  $ rbenv global 2.2.0
   ```
-2. Install rbenv and bundler
+2. Install rails
   ```
-  $ rbenv install
-  $ gem install bundler
-  $ rbenv rehash
+  gem install rails
   ```
-3. Install the correct version of rbenv by
+3. Install gems
   ```
-  $ cd /path/to/project
-  $ rbenv install
+  $ cd /path/to/Brannongram
+  $ bundle install
+  ```
+4. Start things up
+  ```
+  $ rails s
   ```
