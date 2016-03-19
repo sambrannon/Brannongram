@@ -28,7 +28,13 @@ The installation instructions are super verbose in hopes that I'll remember it b
   $ bundle install
   ```
 
-4. Start things up
+4. Make sure ImageMagick is installed
+
+  ```
+  $ brew install ImageMagick
+  ```
+
+5. Start things up
 
   ```
   $ rails s

@@ -1,1 +1,12 @@
 h1 Brannongram
+
+= link_to "New Post", new_post_path
+
+br
+
+ul
+  - @posts.each do |p|
+    li
+      = image_tag p.image.url(:medium)
+      p
+        = p.caption
