@@ -7,6 +7,9 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
+    - flash.each do |name, msg|
+      = content_tag :div, msg, class: 'flash flash--'+name
+        
     header.app-header
       .wrap
         = link_to root_path, class: 'app-header__logo' do
