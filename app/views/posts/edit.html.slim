@@ -1,0 +1,8 @@
+.wrap
+  = image_tag @post.image.url(:medium), class: 'post__image'
+  
+  = render 'form'
+  
+  .links
+    = link_to "Cancel", post_path
+    = link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you super sure?" }

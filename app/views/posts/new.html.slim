@@ -1,9 +1,2 @@
 .wrap
-  .form-wrapper
-    = simple_form_for @post, html: { class: 'form', multipart: true } do |f|
-      .form__field
-        = f.input :image
-      .form__field
-        = f.input :caption
-      .form__field
-        = f.button :submit, class: 'form__buttom'
+  = render 'form'

@@ -8,3 +8,7 @@
       = image_tag @post.image.url(:medium), class: 'post__image'
       p.post__caption
         = @post.caption
+
+    .links
+      = link_to "All Posts", posts_path
+      = link_to "Edit Post", edit_post_path(@post)
