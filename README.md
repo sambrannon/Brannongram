@@ -12,6 +12,7 @@ The installation instructions are super verbose in hopes that I'll remember it b
   $ brew install rbenv
   $ rbenv global 2.2.0
   ```
+  Also be sure to add `eval "$(rbenv init -)"` to your `~/.zshrc` file so rbenv can be used on new sessions.
 2. Install rails
   ```
   gem install rails
