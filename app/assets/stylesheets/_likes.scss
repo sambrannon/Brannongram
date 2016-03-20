@@ -1,0 +1,13 @@
+.like-heart {
+
+  .heart-icon--top { fill: $white; }
+  .heart-icon--bottom { fill: $gray; }
+
+  &.liked {
+
+    .heart-icon--top,
+    .heart-icon--bottom { fill: $red; }
+
+  }
+
+}

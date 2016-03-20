@@ -10,7 +10,14 @@ article.post
   - else
     = image_tag post.image.url(:medium), class: 'post__image'
   .post__footer
-    p.post__caption
+    - if post.comments.any?
+      p.post__like-count
+        = post.comments.length
+        - if post.comments.length > 1
+          |  Likes
+        - else
+          |  Like
+    h1.post__caption
       = post.caption
     - if post.comments
       ul.post__comments
@@ -23,8 +30,13 @@ article.post
             - if comment.user == current_user
               = link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" }, class: 'comment__delete' do
                 = inline_svg('close.svg')
-    .post__likes-and-comments
-      .post__like-form <3
+    .post__like-and-comment
+      .post__like-form
+        .like-heart
+          = inline_svg('heart.svg')
       .post__comment-form
         = form_for [post, post.comments.new] do |f|
           = f.text_field :content, placeholder: 'Add a comment...'
+      - if @post.user.id == current_user.id
+        = link_to edit_post_path(@post), class: 'post__edit-form' do
+          = inline_svg('pencil.svg')

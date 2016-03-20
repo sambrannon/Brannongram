@@ -22,7 +22,7 @@
     margin-top: 3px;
     border: 1px solid $borders;
     border-radius: 50%;
-    background-color: $gray;
+    background-color: $gray-light;
     vertical-align: middle;
   }
 
@@ -34,7 +34,7 @@
   &__header-time {
     margin: 10px 0 0;
     float: right;
-    color: $gray-dark;
+    color: $gray-med;
   }
 
   &__image {
@@ -51,13 +51,65 @@
 
   }
 
-  &__footer {
-    padding: 24px;
-    font-size: 15px;
+  &__like-count {
+    margin: 0 0 6px;
+    color: $gray-dark;
+    font-weight: 500;
   }
 
   &__caption {
     margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+  }
+
+  &__footer {
+    padding: 24px 24px 0;
+    font-size: 15px;
+  }
+
+  &__like-and-comment {
+    position: relative;
+    margin-top: 24px;
+    padding: 24px 50px;
+    border-top: solid 1px $gray;
+  }
+
+  &__comment-form {
+
+    [type='text'] {
+      display: block;
+      border: 0;
+      outline: none;
+    }
+
+  }
+
+  &__like-form,
+  &__edit-form {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__like-form {
+    left: 0;
+  }
+
+  &__edit-form {
+
+    display: block;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    color: $gray-med;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
   }
 
 }
