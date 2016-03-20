@@ -3,5 +3,5 @@ li.comment
   span.comment__text
     = comment.content
   - if comment.user == current_user
-    = link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Delete forever??" }, class: 'comment__delete', remote: true do
+    = link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Delete '"+comment.content+"'?" }, class: 'comment__delete', remote: true do
       = inline_svg('close.svg')
