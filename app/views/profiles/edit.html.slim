@@ -2,7 +2,7 @@
   .profile
     = form_for @user, url: {action: 'update'}, html: {multipart: true} do |f|
       .profile__avatar-wrapper
-        = image_tag @user.avatar, class: 'profile__avatar'
+        = profile_avatar_select(@user)
       .profile__info
         h1.profile__name
           = @user.user_name

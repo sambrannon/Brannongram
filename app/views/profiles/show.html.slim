@@ -1,7 +1,7 @@
 .wrap
   .profile
     .profile__avatar-wrapper
-      = image_tag @user.avatar, class: 'profile__avatar'
+      = profile_avatar_select(@user)
     .profile__info
       h1.profile__name
         = @user.user_name
