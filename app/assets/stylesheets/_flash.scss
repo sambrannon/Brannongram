@@ -1,0 +1,48 @@
+.flash {
+
+  position: absolute;
+  top: 77px;
+  right: 0;
+  left: 0;
+  padding: 10px;
+  color: $white;
+  text-align: center;
+
+  &--notice {
+    background-color: $blue;
+  }
+
+  &--alert {
+    background-color: $blue;
+  }
+
+  &--success {
+    background-color: $blue;
+  }
+
+  &--error {
+    background-color: $red;
+  }
+
+  &__close {
+
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    transform: translateY(-50%);
+    border: 0;
+    background: none;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+  }
+
+}
