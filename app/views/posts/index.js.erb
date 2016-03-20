@@ -1,0 +1,5 @@
+$('#posts').append("<%= escape_javascript(render 'posts') %>");
+$('#posts-paginate').html("<%= escape_javascript(link_to_next_page @posts, 'Load More', remote: true, id: 'load_more', class: 'button__load-more') %>");
+if ( !$('#load_more').length ) {
+  $('#posts-paginate').remove();
+}

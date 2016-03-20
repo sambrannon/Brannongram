@@ -1,4 +1,5 @@
 .wrap
-  div.posts
-    - @posts.each do |post|
-      = render 'post', post: post
+  div.posts#posts
+    = render 'posts'
+  .posts__paginate#posts-paginate
+    = link_to_next_page @posts, 'Load More', remote: true, id: 'load_more', class: 'button__load-more'
