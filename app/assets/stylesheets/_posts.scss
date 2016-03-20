@@ -16,20 +16,25 @@
   }
 
   &__header-avatar {
+    display: inline-block;
     width: 30px;
     height: 30px;
     margin-top: 3px;
     border: 1px solid $borders;
     border-radius: 50%;
     background-color: $gray;
+    vertical-align: middle;
   }
 
   &__header-name {
-
+    margin-left: 10px;
+    vertical-align: middle;
   }
 
   &__header-time {
+    margin: 10px 0 0;
     float: right;
+    color: $gray-dark;
   }
 
   &__image {
@@ -46,8 +51,13 @@
 
   }
 
-  &__caption {
+  &__footer {
+    padding: 24px;
+    font-size: 15px;
+  }
 
+  &__caption {
+    margin: 0;
   }
 
 }
