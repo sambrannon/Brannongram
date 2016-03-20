@@ -208,7 +208,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   kaminari
-  paperclip (~> 4.3)
+  paperclip
   pg
   rails (= 4.2.6)
   sass-rails (~> 5.0)
