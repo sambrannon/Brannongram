@@ -3,7 +3,8 @@ article.post
     = image_tag 'avatar_default.jpg', class: 'post__header-avatar'
     a.post__header-name href="#"
       = post.user.user_name
-    time.post__header-time 12m
+    time.post__header-time
+      = time_ago_in_words post.created_at
   - if params[:action] == 'index'
     = link_to post_path(post), class: 'post__image' do
       = image_tag post.image.url(:medium)
