@@ -3,4 +3,5 @@
     = render partial: "post", locals: {post: @post}
     .links
       = link_to "All Posts", root_path
-      = link_to "Edit Post", edit_post_path(@post)
+      - if @post.user.id == current_user.id
+        = link_to "Edit Post", edit_post_path(@post)
