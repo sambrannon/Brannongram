@@ -13,8 +13,8 @@ article.post
   .post__footer
     - if post.comments.any?
       p.post__like-count
-        = post.comments.length
-        - if post.comments.length > 1
+        = post.comments.count
+        - if post.comments.count > 1
           |  Likes
         - else
           |  Like
@@ -25,9 +25,12 @@ article.post
         = post.caption
       
     - if post.comments
+      - if post.comments.any?
+        .paginator id="comments-paginator-#{post.id}"
+          - unless post.comments.count <= 4
+            = link_to "view all #{post.comments.count} comments", post_comments_path(post), remote: true, class: 'post__more-comments', data: { post_id: "#{post.id}", type: "html" }
       ul.post__comments id="comments_#{post.id}"
-        - post.comments.each do |comment|
-          = render 'comments/comment', post: post, comment: comment
+        = render post.comments.last(4), post: post
           
     .post__like-and-comment
     
