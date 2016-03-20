@@ -1,4 +1,11 @@
 .wrap
+  - if @user == current_user
+    = link_to 'Edit Profile', edit_profile_path(@user.user_name)
+  = image_tag @user.avatar
+  p
+    = @user.bio
+  p
+    = pluralize @user.posts.count, 'post'
   div.posts#posts
     - @posts.each do |post|
       = render 'posts/post', post: post

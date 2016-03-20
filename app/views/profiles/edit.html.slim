@@ -1,0 +1,8 @@
+.wrap
+  p Change your profile picture
+  .form-wrapper
+    = form_for @user, url: {action: 'update'}, html: {multipart: true} do |f|
+      = profile_avatar_select(@user)
+      = f.file_field :avatar, onChange: 'loadFile(event)'
+      = f.text_area :bio, label: false, rows: 4
+      = f.submit "Update Profile"

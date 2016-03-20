@@ -12,11 +12,7 @@ article.post
   .post__footer
     - if post.comments.any?
       p.post__like-count
-        = post.comments.count
-        - if post.comments.count > 1
-          |  Likes
-        - else
-          |  Like
+        = pluralize post.comments.count, 'Like'
     h1.post__caption
       span.comment__user-name
         = post.user.user_name
