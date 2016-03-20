@@ -1,0 +1,63 @@
+.profile {
+
+  @include clearfix;
+  position: relative;
+  margin-top: 60px;
+
+  &__avatar {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    float: left;
+    transform: translateY(-50%);
+    border: solid 1px $gray-med;
+    border-radius: 50%;
+  }
+
+  &__info {
+    width: 100%;
+    padding-left: 210px;
+    float: right;
+  }
+
+  &__name {
+    margin: 0;
+    color: $gray-dark;
+    font-size: 34px;
+    font-weight: 200;
+    line-height: 40px;
+  }
+
+  &__edit {
+
+    display: inline-block;
+    margin-left: 20px;
+    padding: 4px 10px;
+    border: solid 1px $gray-med;
+    border-radius: 3px;
+    color: $gray-med;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: normal;
+    vertical-align: middle;
+
+    &:hover {
+      border-color: $blue;
+    }
+
+  }
+
+  &__bio {
+    color: $gray-dark;
+    font-size: 17px;
+  }
+
+  &__stats {
+    color: $gray-dark;
+    font-size: 17px;
+  }
+
+}

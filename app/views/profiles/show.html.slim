@@ -1,11 +1,16 @@
 .wrap
-  - if @user == current_user
-    = link_to 'Edit Profile', edit_profile_path(@user.user_name)
-  = image_tag @user.avatar
-  p
-    = @user.bio
-  p
-    = pluralize @user.posts.count, 'post'
+  .profile
+    = image_tag @user.avatar, class: 'profile__avatar'
+    .profile__info
+      h1.profile__name
+        = @user.user_name
+        - if @user == current_user
+          = link_to 'Edit Profile', edit_profile_path(@user.user_name), class: 'profile__edit'
+      p.profile__bio
+        = @user.bio
+      p.profile__stats
+        = pluralize @user.posts.count, 'post'
+.wrap
   div.posts#posts
     - @posts.each do |post|
       = render 'posts/post', post: post
