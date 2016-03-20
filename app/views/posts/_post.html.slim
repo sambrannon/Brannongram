@@ -14,8 +14,7 @@ article.post
       p.post__like-count
         = pluralize post.comments.count, 'Like'
     h1.post__caption
-      span.comment__user-name
-        = post.user.user_name
+      = link_to post.user.user_name, profile_path(post.user.user_name), class: 'comment__user-name'
       span.comment__text
         = post.caption
       
