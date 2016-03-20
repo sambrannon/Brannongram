@@ -19,9 +19,14 @@
     color: $blue;
   }
 
-  &__button {
-    display: inline-block;
+  &__nav {
+    margin-top: 3px;
     float: right;
+  }
+
+  &__nav-link {
+    display: inline-block;
+    margin-left: 22px;
   }
 
 }

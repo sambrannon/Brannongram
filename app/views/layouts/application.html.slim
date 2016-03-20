@@ -14,5 +14,7 @@ html
       .wrap
         = link_to root_path, class: 'app-header__logo' do
           = inline_svg('logo.svg', class: 'app-header__logo-image')
-        a href="#" Log Out
+        nav.app-header__nav
+          = link_to "New Post", new_post_path, class: 'app-header__nav-link'
+          a.app-header__nav-link href="#" Log Out
     = yield
