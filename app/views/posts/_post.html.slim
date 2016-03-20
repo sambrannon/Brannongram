@@ -19,24 +19,22 @@ article.post
           |  Like
     h1.post__caption
       = post.caption
+      
     - if post.comments
-      ul.post__comments
+      ul.post__comments id="comments_#{post.id}"
         - post.comments.each do |comment|
-          li.comment
-            span.comment__user-name
-              = comment.user.user_name
-            span.comment__text
-              = comment.content
-            - if comment.user == current_user
-              = link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment FOREVER?" }, class: 'comment__delete' do
-                = inline_svg('close.svg')
+          = render 'comments/comment', post: post, comment: comment
+          
     .post__like-and-comment
+    
       .post__like-form
         .like-heart
           = inline_svg('heart.svg')
+
       .post__comment-form
-        = form_for [post, post.comments.new] do |f|
-          = f.text_field :content, placeholder: 'Add a comment...'
+        = form_for [post, post.comments.build], remote: true do |f|
+          = f.text_field :content, placeholder: 'Add a comment...', class: 'comment_content', id: "comment_content_#{post.id}"
+
       - if post.user.id == current_user.id
         = link_to edit_post_path(post), class: 'post__edit-form' do
           = inline_svg('pencil.svg')
