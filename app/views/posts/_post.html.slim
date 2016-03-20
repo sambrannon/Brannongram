@@ -12,3 +12,19 @@ article.post
   .post__footer
     p.post__caption
       = post.caption
+    - if post.comments
+      ul.post__comments
+        - post.comments.each do |comment|
+          li.comment
+            span.comment__user-name
+              = comment.user.user_name
+            span.comment__text
+              = comment.content
+            - if comment.user == current_user
+              = link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" }, class: 'comment__delete' do
+                = inline_svg('close.svg')
+    .post__likes-and-comments
+      .post__like-form <3
+      .post__comment-form
+        = form_for [post, post.comments.new] do |f|
+          = f.text_field :content, placeholder: 'Add a comment...'
