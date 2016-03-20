@@ -4,15 +4,17 @@
   position: relative;
   margin-top: 60px;
 
-  &__avatar {
-    display: block;
+  &__avatar-wrapper {
     position: absolute;
     top: 50%;
     left: 0;
+    transform: translateY(-50%);
+  }
+
+  &__avatar {
+    display: block;
     width: 150px;
     height: 150px;
-    float: left;
-    transform: translateY(-50%);
     border: solid 1px $gray-med;
     border-radius: 50%;
   }
@@ -53,6 +55,16 @@
   &__bio {
     color: $gray-dark;
     font-size: 17px;
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+    border: solid 1px $gray-med;
+    border-radius: 3px;
+    outline: none;
   }
 
   &__stats {
