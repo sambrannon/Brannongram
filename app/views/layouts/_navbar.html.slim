@@ -1,0 +1,10 @@
+= link_to root_path, class: 'app-header__logo' do
+  = inline_svg('logo.svg', class: 'app-header__logo-image')
+  
+nav.app-header__nav
+  - if user_signed_in?
+    = link_to "New Post", new_post_path, class: 'app-header__nav-link'
+    = link_to "Log Out", destroy_user_session_path, method: :delete, class: 'app-header__nav-link'
+  - else
+    = link_to "Login", new_user_session_path, class: 'app-header__nav-link'
+    = link_to "Register", new_user_registration_path, class: 'app-header__nav-link'
