@@ -6,6 +6,7 @@ gem 'inline_svg'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'paperclip', '~> 4.3'
+gem 'pg'
 gem 'rails', '4.2.6'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
