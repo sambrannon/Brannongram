@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'aws-sdk', '< 2.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
@@ -21,6 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug'
+  gem 'pry'
 end
 
 group :development do
